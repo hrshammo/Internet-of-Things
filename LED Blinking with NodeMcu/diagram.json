@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "HAMIM REZA SHAMMO",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -39.8, "left": -156, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -84.67, "left": 150.67, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -42,
+      "left": -36.73,
+      "attrs": { "color": "cyan" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -40,
+      "left": -68.73,
+      "attrs": { "color": "orange" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -36.67,
+      "left": -98.07,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "bb1:17b.j", "black", [ "h0" ] ],
+    [ "led1:C", "bb1:17b.i", "green", [ "v0" ] ],
+    [ "bb1:11b.h", "bb1:10b.h", "green", [ "v0" ] ],
+    [ "led2:C", "bb1:17b.i", "green", [ "v0" ] ],
+    [ "led3:C", "bb1:17b.i", "green", [ "v0" ] ],
+    [ "led3:A", "bb1:7b.i", "green", [ "v0" ] ],
+    [ "led2:A", "bb1:7b.h", "green", [ "v0" ] ],
+    [ "led1:A", "bb1:7b.g", "green", [ "v0" ] ],
+    [ "esp:D15", "bb1:7b.j", "green", [ "h19.86", "v45.54", "h-356" ] ]
+  ],
+  "dependencies": {}
+}
