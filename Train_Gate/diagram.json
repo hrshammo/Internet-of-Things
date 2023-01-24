@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "HAMIM REZA SHAMMO",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 40, "left": -134.66, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 21.99,
+      "left": -20.73,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": 11.52,
+      "left": 95.43,
+      "attrs": { "distance": "366" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 28.68, "left": 50.6, "attrs": { "color": "red" } },
+    { "type": "wokwi-servo", "id": "servo1", "top": 203.3, "left": 104.97, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:ECHO", "esp:D2", "green", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "esp:D4", "green", [ "v0" ] ],
+    [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.1", "green", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "bz1:2", "esp:D5", "green", [ "v0" ] ],
+    [ "led1:A", "esp:D18", "green", [ "v0" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "servo1:V+", "esp:3V3", "green", [ "h0" ] ],
+    [ "servo1:PWM", "esp:D21", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
